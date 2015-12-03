@@ -64,7 +64,7 @@ wp plugin install wp-limit-login-attempts --activate
 wp plugin install ninja-forms --activate
 
 # install the sprig twig starter theme
-wp theme install https://github.com/zach-adams/sprig --activate
+wp theme install https://github.com/zach-adams/sprig.git --activate
 
 clear
 
