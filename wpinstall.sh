@@ -28,7 +28,14 @@ else
 fi
 
 # add a simple yes/no confirmation before we proceed
-echo "Are you in Sites dir? Run Install? (y/n)"
+echo "================================================================="
+echo ""
+echo "Are you in /Sites folder?"
+echo ""
+echo "Are your DB User/Pass root/root?"
+echo ""
+echo "================================================================="
+echo "Run Install? (y/n)"
 read -e run
 
 # if the user didn't say no, then go ahead an install
@@ -59,7 +66,7 @@ wp plugin delete akismet
 wp plugin delete hello
 
 # install plugins and activace
-wp plugin install timber --activate
+wp plugin install timber-library --activate
 wp plugin install wp-limit-login-attempts --activate
 wp plugin install ninja-forms --activate
 
