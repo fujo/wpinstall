@@ -69,6 +69,8 @@ wp plugin delete hello
 wp plugin install timber-library --activate
 wp plugin install wp-limit-login-attempts --activate
 wp plugin install ninja-forms --activate
+wp plugin install w3-total-cache --activate
+echo "Plugins installed"
 
 # install the sprig twig starter theme
 # wp theme install https://github.com/zach-adams/sprig.git --activate
@@ -76,6 +78,20 @@ cd wp-content/themes/
 git clone https://github.com/olefredrik/FoundationPress.git
 cd FoundationPress
 npm install
+echo "Theme installed"
+
+# create some pages
+wp post create --post_type=page --post_title='Home' --post_status=publish
+wp post create --post_type=page --post_title='About' --post_status=publish
+wp post create --post_type=page --post_title='Team' --post_status=publish
+wp post create --post_type=page --post_title='Contact' --post_status=publish
+echo "Dummy pages created"
+
+# Permalinks to /%postname%/
+wp rewrite structure "/%postname%/" --hard
+wp rewrite flush --hard
+echo "Permalinks structure setted"
+
 
 clear
 
